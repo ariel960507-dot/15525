@@ -1,0 +1,264 @@
+/* 
+    HW07 外部樣式表：hw07.css
+    用途：將原先內嵌在 HTML 中的 CSS 樣式與行內樣式統一移至外部檔案管理，
+    並透過相對路徑 "css/hw07.css" 供 HTML 引用。
+*/
+
+/* 1. 全域與 Body 基本設定 */
+body {
+    font-family: 'Plus Jakarta Sans', 'Noto Serif TC', sans-serif;
+    line-height: 1.8;
+    color: #1e293b;
+    background-color: #f8fafc;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Noto Serif TC', serif;
+    color: #0f172a;
+}
+
+/* 2. 頁首、導覽、章節、補充資訊及頁尾的留白、背景與框線 */
+header {
+    background: linear-gradient(135deg, #3d1e08 0%, #552a0b 50%, #8b4513 100%);
+    color: #ffffff;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem 1rem 0 0;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    color: #ffffff;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+nav a {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #8b4513;
+    background-color: #fbeee9;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+aside {
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.aside-title {
+    color: #92400e;
+    margin-top: 0;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-btn-wrapper {
+    margin-top: 1rem;
+}
+
+.back-to-top {
+    background-color: #334155;
+    color: #f8fafc;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.back-to-top:hover, .back-to-top:focus {
+    background-color: #1e293b;
+    text-decoration: underline;
+}
+
+/* 3. 標題、段落、清單、表格及圖說樣式（已移除舊式 border 屬性改為 CSS） */
+h2 {
+    font-size: 1.75rem;
+    border-left: 4px solid #8b4513;
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #cbd5e1;
+}
+
+th, td {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #552a0b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+figure {
+    margin: 1.5rem 0;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 2rem 0;
+}
+
+/* 4. 媒體元素區分與寬度控制 */
+.responsive-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.media-video {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 0.75rem;
+    border: 1px solid #cbd5e1;
+    display: block;
+    margin: 0 auto;
+}
+
+.media-map {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border-radius: 0.75rem;
+    border: 1px solid #cbd5e1;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 焦點導覽外框提示 */
+a:focus-visible, button:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/* 5. 三處行內樣式改用 class 遷移與權重對應 */
+/* 遷移一：閱讀焦點文字背景與邊距調整 */
+.reading-focus {
+    background-color: #f6df9d;
+    color: #3e351c;
+    padding: 2px 6px;
+    border-radius: 0.25rem;
+}
+
+/* 遷移二：散步遊程說明提示 */
+.route-note {
+    font-weight: 600;
+    color: #552a0b;
+}
+
+/* 遷移三：資料來源聲明小字斜體與顏色（優先權高於一般 small） */
+.report-disclaimer {
+    font-style: italic;
+    color: #78350f;
+}
